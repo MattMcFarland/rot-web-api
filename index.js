@@ -1,7 +1,6 @@
 const corsMiddleware = require('cors-middleware')
 const merry = require('merry')
 const http = require('http')
-const fs = require('fs')
 
 const app = merry()
 const mw = merry.middleware
