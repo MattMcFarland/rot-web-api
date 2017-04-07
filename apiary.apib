@@ -5,9 +5,12 @@ HOST: https://rogue-api.herokuapp.com/api
 
 A simple API that generates dungeon maps.
 
-
 ## Generators [/api{#rogue}{#digger}{#iceymaze}{#ellermaze}{cellular}{uniform}{arena}{?width}{?height}]
 
+ + Attributes
+   + method
+   + params
+ 
 ### Rogue [GET /rogue{?width}{?height}{?roomWidth}{?roomHeight}]
 Dungeon generator which uses the "orginal" Rogue dungeon generation algorithm. See http://kuoi.com/~kamikaze/GameDesign/art07_rogue_dungeon.php
 
@@ -17,6 +20,9 @@ Dungeon generator which uses the "orginal" Rogue dungeon generation algorithm. S
   + roomWidth: `10` (<integer> | optional) - Room min and max width, normally set auto-magically if left blank
   + roomHeight: `10` (<integer> | optional) - Room min and max height, normally set auto-magically if left blank
 
++ Attributes
+  + map: `array` () - 2d array [x][y]
+  
 + Response 200 (application/json)
 
 ### Digger [GET /digger{?width}{?height}]
