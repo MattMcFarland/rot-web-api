@@ -23,26 +23,19 @@ server.listen(env.PORT, () => {
   console.log('hop on over to http://localhost:' + env.PORT);
 })
 
-
 function rogueApi (req, res, ctx, done) {
   const ROT = require('rot-js')
   const querystring = require('querystring')
   const qs = querystring.parse(req.url)
   const method = translateMethod(ctx.params.method)
   const gen = ROT.Map[method]
+  
   let rogueMap;
   let map = []
-  if (method === 'Rogue') {
-    rogueMap = new gen(25, 80).create((x, y, v) => {
-      map[x] = map[x] || []
-      map[x][y] = v
-    })
-  } else {
-    rogueMap = new gen(25, 80).create((x, y, v) => {
-      map[x] = map[x] || []
-      map[x][y] = v
-    })
-  }  
+  rogueMap = new gen(25, 80).create((x, y, v) => {
+    map[x] = map[x] || []
+    map[x][y] = v
+  })
 
   done(null, Object.assign({map}, rogueMap))
 }
