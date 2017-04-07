@@ -8,6 +8,7 @@ A self-hosted dungeon generation server!
 
 * [How it works](/#how-it-works) 
 * [API](/#API) 
+  * [API Documentation](http://docs.roguelike.apiary.io/#)
 * [Server Setup](/#server-setup)
 * [Examples](/#examples)
 * [Acknowledgements](/#acknowledgements)
@@ -18,7 +19,7 @@ This server comes with a sample index.html that shows when you send a GET reques
 
 ## API
 
-Should you send a GET request to the server, you will receive JSON data. Here are the available GET request methods.  The API documentation is available on apiary.com
+Should you send a GET request to the server, you will receive JSON data. Here are the available GET request methods.  The [API documentation](http://docs.roguelike.apiary.io/#) is available on apiary.
 
 ## Server setup
 
