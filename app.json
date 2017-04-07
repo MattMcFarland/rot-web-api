@@ -2,6 +2,6 @@
   "name": "Roguelike RESTful web service",
   "description": "A barebones rest server that sends generated roguelike dungones",
   "repository": "https://github.com/mattmcfarland/rot-web-api",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
-  "keywords": ["node", "express", "static"]
+  "logo": "https://raw.githubusercontent.com/MattMcFarland/rot-web-api/master/bowie-knife.png",
+  "keywords": ["node", "roguelike", "restful", "api"]
 }
