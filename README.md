@@ -52,3 +52,7 @@ This would not be possible without the hard work and tireless from the contribit
 * [Merry](https://github.com/shipharbor/merry) provides the RESTful API service, authored by Yoshua Wuyts
 * [NodeJS](http://nodejs.org) provides the run-time environment, authored by many.
 * [NPM](http://npmjs.com), the package manager for nodejs, authored by many
+
+## LICENSE
+
+[MIT](./LICENSE)
