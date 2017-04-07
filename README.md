@@ -2,9 +2,11 @@
 
 Generate dungeon maps from a server REST API!
 
+More documentation coming.
+
 ### Server setup
 
-Clone this repo, then run npm install/npm start.
+Clone this repo, then run npm install/npm start, which will then output the url to your localhost:8080.
 
 ### Browser Example
 
