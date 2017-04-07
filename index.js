@@ -11,8 +11,8 @@ const cors = corsMiddleware({
 })
 
 app.router([
-  [ '/', homePath ],
-  [ '/favicon.ico', favicon ],
+  [ '/', staticFile('./index.html') ],
+  [ '/favicon.ico', staticFile('./favicon.ico') ],
   [ '/api/:method', mw([ cors, rogueApi ]) ],
   [ '/404', merry.notFound() ]
 ])
@@ -21,35 +21,42 @@ const env = merry.env({ PORT: process.env.PORT || 8080 })
 const server = http.createServer(app.start())
 
 server.listen(env.PORT, () => {
-  console.log('server is up and running!')
-  console.log('hop on over to http://localhost:' + env.PORT);
+  app.log.info('listening', { url: 'http://localhost:' + env.PORT})
 })
 
 function rogueApi (req, res, ctx, done) {
   const ROT = require('rot-js')
   const querystring = require('querystring')
-  const qs = querystring.parse(req.url)
-  const method = translateMethod(ctx.params.method)
-  const gen = ROT.Map[method]
-  
-  let rogueMap;
-  let map = []
-  rogueMap = new gen(25, 80).create((x, y, v) => {
-    map[x] = map[x] || []
-    map[x][y] = v
-  })
-
-  done(null, Object.assign({map}, rogueMap))
+  try {
+    const queryParams = querystring.parse(req.url.split('?')[1]) || {}
+    const method = translateMethod(ctx.params.method)
+    const gen = ROT.Map[method]
+    const options = Object.assign({}, { width: 80, height: 25 }, queryParams)
+    
+    let rogueMap;
+    let map = []
+    rogueMap = new gen(options.height, options.width, options).create((x, y, v) => {
+      map[x] = map[x] || []
+      map[x][y] = v
+    })
+    done(null, Object.assign({}, {map}, rogueMap))
+  } catch (e) {
+    app.log.error(e)
+    done(e)
+  }
 }
 
-function homePath (req, res) {
-  fs.createReadStream('./index.html').pipe(res)
+function staticFile(filepath) {
+  const fs = require('fs')
+  return function (req, res) {
+    fs.createReadStream(filepath).pipe(res)
+  }
 }
-function favicon (req, res) {
-  fs.createReadStream('./favicon.ico').pipe(res)
-}
+
 function translateMethod(method) {
   switch (method) {
+    case 'arena':
+      return 'Arena'
     case 'iceymaze':
       return 'IceyMaze'
     case 'ellermaze':
