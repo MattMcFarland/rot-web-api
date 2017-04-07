@@ -1,6 +1,7 @@
 const corsMiddleware = require('cors-middleware')
 const merry = require('merry')
 const http = require('http')
+const fs = require('fs')
 
 const app = merry()
 const mw = merry.middleware
@@ -11,6 +12,7 @@ const cors = corsMiddleware({
 
 app.router([
   [ '/', homePath ],
+  [ '/favicon.ico', favicon ],
   [ '/api/:method', mw([ cors, rogueApi ]) ],
   [ '/404', merry.notFound() ]
 ])
@@ -41,9 +43,11 @@ function rogueApi (req, res, ctx, done) {
 }
 
 function homePath (req, res) {
-  require('fs').createReadStream('./index.html').pipe(res)
+  fs.createReadStream('./index.html').pipe(res)
 }
-
+function favicon (req, res) {
+  fs.createReadStream('./favicon.ico').pipe(res)
+}
 function translateMethod(method) {
   switch (method) {
     case 'iceymaze':

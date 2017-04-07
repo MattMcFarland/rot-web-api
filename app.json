@@ -1,0 +1,7 @@
+{
+  "name": "Roguelike RESTful web service",
+  "description": "A barebones rest server that sends generated roguelike dungones",
+  "repository": "https://github.com/mattmcfarland/rot-web-api",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "static"]
+}
