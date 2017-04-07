@@ -1,0 +1,18 @@
+{
+  "name": "rot-js-api",
+  "version": "1.0.0",
+  "description": "roguelike dungeon map generator web API server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Matt McFarland<contact@mattmcfarland.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors-middleware": "^1.0.0",
+    "merry": "^4.7.2",
+    "rot-js": "^0.6.2"
+  }
+}

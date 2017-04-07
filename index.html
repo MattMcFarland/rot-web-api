@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dungeon</title>
+</head>
+<body>
+    <style>
+        dungeon {
+            display: block;
+            width: calc(20px * 80);
+            margin: 48px auto 0 auto;
+            background:#222;
+        }
+        dungeon > row {
+            display: block;
+            height:20px;
+        }
+        dungeon > row > tile
+        {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            color:#eee;
+        }
+        tile.floor {
+            background: black;
+        }
+        tile.wall {
+            background: grey;
+        }
+        pre {
+            overflow: auto;
+            height: 200px;
+            width: calc(20px * 80);
+            margin: 0 auto;
+            font-size: 14px;
+            background: #eee;
+        }
+    </style>
+    <script>
+        function generator(method) {
+            return get(`/api/${method}`, (res) => {
+                document.querySelector('dungeon') && document.body.removeChild(document.querySelector('dungeon'))
+                document.querySelector('pre') && document.body.removeChild(document.querySelector('pre'))
+
+                let elementDungeon = document.createElement('dungeon')
+                res.map.forEach((row, x) => {
+                    let elementRow = document.createElement('row')
+                    row.forEach((col, y) => {
+                        let elementCol = document.createElement("tile")                    
+                        elementCol.setAttribute('value', col)
+                        elementCol.setAttribute('coord', `${x+1},${y+1}`)
+                        elementCol.className = col === 1 ? "wall" : "floor"
+                        elementRow.appendChild(elementCol)
+                    })
+                    elementDungeon.appendChild(elementRow)                
+                })
+                document.body.appendChild(elementDungeon)
+                let preElement = document.createElement('pre')
+                preElement.innerHTML = JSON.stringify(res, null, 2)
+                document.body.appendChild(preElement)
+            })
+        }
+
+        function get(url, cb) {
+            const xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    cb(JSON.parse(xhr.responseText))
+                }
+            };
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+    </script>
+    <menu>
+        <button onclick="generator('rogue')">Rogue</button>
+        <button onclick="generator('digger')">Digger</button>
+        <button onclick="generator('iceymaze')">IceyMaze</button>
+        <button onclick="generator('ellermaze')">EllerMaze</button>
+    </menu>
+</body>
+</html>
