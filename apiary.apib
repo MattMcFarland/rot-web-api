@@ -1,0 +1,79 @@
+FORMAT: 1A
+HOST: https://rogue-api.herokuapp.com/api
+
+# Roguelike web api (rot-web-api)
+
+A simple API that generates dungeon maps.
+
+
+## Generators [/api{#rogue}{#digger}{#iceymaze}{#ellermaze}{cellular}{uniform}{arena}{?width}{?height}]
+
+### Rogue [GET /rogue{?width}{?height}{?roomWidth}{?roomHeight}]
+Dungeon generator which uses the "orginal" Rogue dungeon generation algorithm. See http://kuoi.com/~kamikaze/GameDesign/art07_rogue_dungeon.php
+
++ Parameters
+  + width: `80` (<integer> | optional) - width in cells, default is 80
+  + height: `25` (<integer> | optional) - height in cells, default is 25
+  + roomWidth: `10` (<integer> | optional) - Room min and max width, normally set auto-magically if left blank
+  + roomHeight: `10` (<integer> | optional) - Room min and max height, normally set auto-magically if left blank
+
++ Response 200 (application/json)
+
+### Digger [GET /digger{?width}{?height}]
+Random dungeon generator using human-like digging patterns. Heavily based on Mike Anderson's ideas from the "Tyrant" algo, mentioned at http://www.roguebasin.roguelikedevelopment.org/index.php?title=Dungeon-Building_Algorithm
+
++ Parameters
+  + width: `80` (<integer> | optional) - width in cells, default is 80
+  + height: `25` (<integer> | optional) - height in cells, default is 25
+
++ Response 200 (application/json)
+
+
+### IceyMaze [GET /iceymaze{?width}{?height}]
+See http://www.roguebasin.roguelikedevelopment.org/index.php?title=Simple_maze for explanation
+
++ Parameters
+  + width: `80` (<integer> | optional) - width in cells, default is 80
+  + height: `25` (<integer> | optional) - height in cells, default is 25
+  
++ Response 200 (application/json)
+
+
+### EllerMaze [GET /ellermaze{?width}{?height}]
+
+Maze generator, Eller's algorithm See http://homepages.cwi.nl/~tromp/maze.html for explanation
+
++ Parameters
+  + width: `80` (<integer> | optional) - width in cells, default is 80
+  + height: `25` (<integer> | optional) - height in cells, default is 25
+  
++ Response 200 (application/json)
+
+### Cellular Automaton [GET /cellular{?width}{?height}{?topology}]
+
+Cellular automaton map generator
+
++ Parameters
+  + width: `80` (<integer> | optional) - width in cells, default is 80
+  + height: `25` (<integer> | optional) - height in cells, default is 25
+  + topology: `6` (<integer> | optional) - Topology 4 or 6 or 8
+
++ Response 200 (application/json)
+
+### Uniform [GET /uniform{?width}{?height}]
+
+Dungeon generator which tries to fill the space evenly. Generates independent rooms and tries to connect them.
+
++ Parameters
+  + width: `80` (<integer> | optional) - width in cells, default is 80
+  + height: `25` (<integer> | optional) - height in cells, default is 25
+  
++ Response 200 (application/json)
+
+### Arena [GET /arena{?width}{?height}]
+Simple empty rectangular room
++ Parameters
+  + width: `80` (<integer> | optional) - width in cells, default is 80
+  + height: `25` (<integer> | optional) - height in cells, default is 25
+  
++ Response 200 (application/json)
