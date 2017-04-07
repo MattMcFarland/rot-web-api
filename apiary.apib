@@ -10,8 +10,9 @@ A simple API that generates dungeon maps.
  + Attributes
    + method
    + params
- 
+
 ### Rogue [GET /rogue{?width}{?height}{?roomWidth}{?roomHeight}]
+
 Dungeon generator which uses the "orginal" Rogue dungeon generation algorithm. See http://kuoi.com/~kamikaze/GameDesign/art07_rogue_dungeon.php
 
 + Parameters
@@ -46,7 +47,6 @@ See http://www.roguebasin.roguelikedevelopment.org/index.php?title=Simple_maze f
   + height: `25` (<integer> | optional) - height in cells, default is 25
   
 + Response 200 (application/json)
-    + Body
             {"map":[[1,1,1,1,1,1,1,1,1,1],[1,0,0,0,0,0,0,0,1,1],[1,1,1,1,1,1,1,0,1,1],[1,0,0,0,0,0,0,0,1,1],[1,0,1,1,1,1,1,1,1,1],[1,0,0,0,0,0,0,0,1,1],[1,1,1,1,1,1,1,0,1,1],[1,0,0,0,0,0,0,0,1,1],[1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1]],"_width":"10","_height":"10","_regularity":{"width":"10","height":"10"},"_map":null}
 
 ### EllerMaze [GET /ellermaze{?width}{?height}]
@@ -70,6 +70,7 @@ Cellular automaton map generator
   + topology: `6` (<integer> | optional) - Topology 4 or 6 or 8
 
 + Response 200 (application/json)
+            {"map":[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]}
 
 ### Uniform [GET /uniform{?width}{?height}]
 
@@ -90,3 +91,4 @@ Simple empty rectangular room
   + height: `25` (<integer> | optional) - height in cells, default is 25
   
 + Response 200 (application/json)
+            {"map":[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]}
