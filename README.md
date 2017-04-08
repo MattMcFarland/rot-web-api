@@ -1,4 +1,4 @@
-## Dungeon generator server
+## Dungeon generator server [![Build Status](https://travis-ci.org/MattMcFarland/rot-web-api.svg?branch=master)](https://travis-ci.org/MattMcFarland/rot-web-api)
 
 A self-hosted dungeon generation server!
 
