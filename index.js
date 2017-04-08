@@ -31,7 +31,7 @@ function rogueApi (req, res, ctx, done) {
     const method = translateMethod(ctx.params.method)
     const gen = ROT.Map[method]
     const options = Object.assign({}, { width: 80, height: 25 }, queryParams)
-    
+
     let rogueMap;
     let map = []
     rogueMap = new gen(options.height, options.width, options).create((x, y, v) => {

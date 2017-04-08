@@ -26,7 +26,7 @@ Dungeon generator which uses the "orginal" Rogue dungeon generation algorithm. S
 
 + Attributes
   + map: `array` () - 2d array [x][y]
-  
+
 + Response 200 (application/json)
             {"map":[[1,1,1,1,1,1,1,1,1,1],[1,1,0,0,1,1,1,1,1,1],[1,1,0,0,1,1,1,0,0,1],[1,1,0,0,0,0,0,0,0,0,0,0],[1,1,0,0,1,1,1,0,0,1],[1,1,1,0,1,1,1,1,0,1],[1,1,0,0,1,1,1,1,0,0,0],[1,1,0,1,1,1,1,1,1,1,0,0,0,0],[1,0,0,1,1,1,1,1,1,1,null,null,null,0],[1,0,0,0,0,0,1,0,0,1],[1,1,1,1,1,0,0,0,0,0,0,0],[1,1,1,1,1,1,1,0,1,1],[1,1,1,1,1,1,1,0,1,0],[1,0,0,1,1,1,1,0,1,0,0,0,0],[1,0,0,0,0,0,0,0,0,1,null,null,0],[1,1,1,1,1,1,1,1,1,1]],"_width":"16","_height":"10","_options":{"cellWidth":3,"cellHeight":3,"width":"10","height":"16","roomWidth":[2,4],"roomHeight":[2,2]},"rooms":[[{"x":1,"y":2,"width":4,"height":2,"connections":[[1,0]],"cellx":0,"celly":0},{"x":2,"y":7,"width":3,"height":2,"connections":[[0,0]],"cellx":0,"celly":1},{"x":2,"y":12,"width":3,"height":-3,"connections":[[0,1]],"cellx":0,"celly":2}],[{"x":8,"y":1,"width":2,"height":2,"connections":[[1,1]],"cellx":1,"celly":0},{"x":9,"y":7,"width":2,"height":2,"connections":[[1,2]],"cellx":1,"celly":1},{"x":9,"y":12,"width":3,"height":-3,"connections":[[0,2]],"cellx":1,"celly":2}],[{"x":13,"y":1,"width":2,"height":2,"connections":[[2,1]],"cellx":2,"celly":0},{"x":14,"y":7,"width":1,"height":2,"connections":[[1,1]],"cellx":2,"celly":1},{"x":15,"y":12,"width":0,"height":-3,"connections":[[1,2]],"cellx":2,"celly":2}]],"connectedCells":[[1,1],[0,2],[1,0],[0,0],[0,1],[1,2]]}
 
@@ -48,7 +48,7 @@ See http://www.roguebasin.roguelikedevelopment.org/index.php?title=Simple_maze f
 + Parameters
   + width: `80` (<integer> | optional) - width in cells, default is 80
   + height: `25` (<integer> | optional) - height in cells, default is 25
-  
+
 + Response 200 (application/json)
             {"map":[[1,1,1,1,1,1,1,1,1,1],[1,0,0,0,0,0,0,0,1,1],[1,1,1,1,1,1,1,0,1,1],[1,0,0,0,0,0,0,0,1,1],[1,0,1,1,1,1,1,1,1,1],[1,0,0,0,0,0,0,0,1,1],[1,1,1,1,1,1,1,0,1,1],[1,0,0,0,0,0,0,0,1,1],[1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1]],"_width":"10","_height":"10","_regularity":{"width":"10","height":"10"},"_map":null}
 
@@ -59,7 +59,7 @@ Maze generator, Eller's algorithm See http://homepages.cwi.nl/~tromp/maze.html f
 + Parameters
   + width: `80` (<integer> | optional) - width in cells, default is 80
   + height: `25` (<integer> | optional) - height in cells, default is 25
-  
+
 + Response 200 (application/json)
             {"map":[[1,1,1,1,1,1,1,1,1,1],[1,0,0,0,0,0,0,0,1,1],[1,1,1,1,1,1,1,0,1,1],[1,0,0,0,0,0,0,0,1,1],[1,0,1,1,1,1,1,1,1,1],[1,0,0,0,0,0,0,0,1,1],[1,1,1,1,1,1,1,0,1,1],[1,0,0,0,0,0,0,0,1,1],[1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1]],"_width":"10","_height":"10","_regularity":{"width":"10","height":"10"},"_map":null}
 
@@ -82,7 +82,7 @@ Dungeon generator which tries to fill the space evenly. Generates independent ro
 + Parameters
   + width: `80` (<integer> | optional) - width in cells, default is 80
   + height: `25` (<integer> | optional) - height in cells, default is 25
-  
+
 + Response 200 (application/json)
             {"map":[[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,0,0,0,1,1,1,1,1,1,1,1,1,1,1],[1,0,0,0,0,0,0,1,1,1,1,1,1,1,1],[1,0,0,0,1,1,0,1,0,0,0,1,1,1,1],[1,1,1,1,1,1,0,0,0,0,0,1,1,1,1],[1,1,1,1,1,1,1,1,0,0,0,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]],"_width":"10","_height":"15","_rooms":[{"_x1":3,"_y1":1,"_x2":5,"_y2":3,"_doors":{"4,4":1}},{"_x1":5,"_y1":8,"_x2":7,"_y2":10,"_doors":{"6,7":1}}],"_corridors":[{"_startX":4,"_startY":4,"_endX":4,"_endY":6,"_endsWithAWall":true},{"_startX":4,"_startY":6,"_endX":6,"_endY":6,"_endsWithAWall":true},{"_startX":6,"_startY":6,"_endX":6,"_endY":7,"_endsWithAWall":true}],"_options":{"roomWidth":[3,9],"roomHeight":[3,5],"roomDugPercentage":0.1,"timeLimit":1000,"width":"15","height":"10"},"_roomAttempts":20,"_corridorAttempts":20,"_connected":[{"_x1":5,"_y1":8,"_x2":7,"_y2":10,"_doors":{"6,7":1}},{"_x1":3,"_y1":1,"_x2":5,"_y2":3,"_doors":{"4,4":1}}],"_unconnected":[],"_map":[[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,0,0,0,1,1,1,1,1,1,1,1,1,1,1],[1,0,0,0,0,0,0,1,1,1,1,1,1,1,1],[1,0,0,0,1,1,0,1,0,0,0,1,1,1,1],[1,1,1,1,1,1,0,0,0,0,0,1,1,1,1],[1,1,1,1,1,1,1,1,0,0,0,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]],"_dug":44}
 
@@ -92,6 +92,6 @@ Simple empty rectangular room
 + Parameters
   + width: `80` (<integer> | optional) - width in cells, default is 80
   + height: `25` (<integer> | optional) - height in cells, default is 25
-  
+
 + Response 200 (application/json)
             {"map":[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]}

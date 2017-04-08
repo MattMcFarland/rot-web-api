@@ -6,8 +6,8 @@ A self-hosted dungeon generation server!
 
 ## Table of Contents
 
-* [How it works](#how-it-works) 
-* [API](#api) 
+* [How it works](#how-it-works)
+* [API](#api)
   * [API Documentation](http://docs.roguelike.apiary.io/#)
 * [Server Setup](#server-setup)
 * [Examples](#examples)
@@ -16,7 +16,7 @@ A self-hosted dungeon generation server!
 
 ## How it works
 
-This server comes with a sample index.html that shows when you send a GET request to the server, it responds with a new map in kind.  This allows you to fully decouple the dungeon generation into a microservice, so that the game can be written in any language that can send HTTP requests and read JSON. Thus, the responsibility for (at least, the initial) dungeon generation itself is offloaded completely.  
+This server comes with a sample index.html that shows when you send a GET request to the server, it responds with a new map in kind.  This allows you to fully decouple the dungeon generation into a microservice, so that the game can be written in any language that can send HTTP requests and read JSON. Thus, the responsibility for (at least, the initial) dungeon generation itself is offloaded completely.
 
 ## API
 
@@ -24,7 +24,7 @@ Should you send a GET request to the server, you will receive JSON data. Read th
 
 ## Server setup
 
-The API server runs on [Node.js](https://nodejs.org), and has been engineered to be a microservice and run in the cloud.  The easiest way to get your own server up and running is to [deploy with heroku](https://heroku.com/deploy) (which is of no cost to you), that way,  you dont need to setup your own server or install nodejs.  
+The API server runs on [Node.js](https://nodejs.org), and has been engineered to be a microservice and run in the cloud.  The easiest way to get your own server up and running is to [deploy with heroku](https://heroku.com/deploy) (which is of no cost to you), that way,  you dont need to setup your own server or install nodejs.
 
 ### Test environment
 
@@ -49,7 +49,7 @@ There is an [example server running on heroku](http://rogue-api.herokuapp.com/) 
 
 This would not be possible without the hard work and tireless efforts from the contributors/authors of the following projects:
 
-* [ROT-JS](https://github.com/ondras/rot.js/) provides the algorithms for creating the dungeons, authored by Ondrej Zara 
+* [ROT-JS](https://github.com/ondras/rot.js/) provides the algorithms for creating the dungeons, authored by Ondrej Zara
 * [Merry](https://github.com/shipharbor/merry) provides the RESTful API service, authored by Yoshua Wuyts
 * [NodeJS](http://nodejs.org) provides the run-time environment, authored by many.
 * [NPM](http://npmjs.com), the package manager for nodejs, authored by many
