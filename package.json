@@ -8,11 +8,20 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Matt McFarland<contact@mattmcfarland.com>",
+  "author": "Matt McFarland <contact@mattmcfarland.com>",
   "license": "MIT",
   "dependencies": {
     "cors-middleware": "^1.0.0",
     "merry": "^4.7.2",
     "rot-js": "^0.6.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattMcFarland/rot-web-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MattMcFarland/rot-web-api/issues"
+  },
+  "homepage": "https://github.com/MattMcFarland/rot-web-api#readme"
 }
