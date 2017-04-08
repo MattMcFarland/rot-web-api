@@ -6,12 +6,13 @@ A self-hosted dungeon generation server!
 
 ## Table of Contents
 
-* [How it works](/#how-it-works) 
-* [API](/#API) 
+* [How it works](#how-it-works) 
+* [API](#api) 
   * [API Documentation](http://docs.roguelike.apiary.io/#)
-* [Server Setup](/#server-setup)
-* [Examples](/#examples)
-* [Acknowledgements](/#acknowledgements)
+* [Server Setup](#server-setup)
+* [Examples](#examples)
+* [Acknowledgements](#acknowledgements)
+* [License](#license)
 
 ## How it works
 
@@ -40,7 +41,7 @@ Your server should then be running on localhost:8080, from which you can use the
 
 ## Examples
 
-When server is running, you can navigate to the root url to see a very basic example of API usage.
+When the server is running, you can navigate to the root url to see a very basic example of API usage.
 
 There is an [example server running on heroku](http://rogue-api.herokuapp.com/) right now, if you would like to give it a test drive.  That being said, I highly recommend you check out the [documentation on apiary](http://docs.roguelike.apiary.io/#), as it includes live examples and hits the same server endpoints, anyway.
 
