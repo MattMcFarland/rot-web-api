@@ -4,8 +4,9 @@
   "description": "roguelike dungeon map generator web API server",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node lib/server",
+    "lint": "standard lib | snazzy",
+    "test": "mocha test/**/*.js"
   },
   "keywords": [],
   "author": "Matt McFarland <contact@mattmcfarland.com>",

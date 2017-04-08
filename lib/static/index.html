@@ -50,13 +50,13 @@
                 res.map.forEach((row, x) => {
                     let elementRow = document.createElement('row')
                     row.forEach((col, y) => {
-                        let elementCol = document.createElement("tile")                    
+                        let elementCol = document.createElement("tile")
                         elementCol.setAttribute('value', col)
                         elementCol.setAttribute('coord', `${x+1},${y+1}`)
                         elementCol.className = col === 1 ? "wall" : "floor"
                         elementRow.appendChild(elementCol)
                     })
-                    elementDungeon.appendChild(elementRow)                
+                    elementDungeon.appendChild(elementRow)
                 })
                 document.body.appendChild(elementDungeon)
                 let preElement = document.createElement('pre')
