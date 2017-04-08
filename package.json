@@ -15,7 +15,11 @@
     "merry": "^4.7.2",
     "rot-js": "^0.6.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MattMcFarland/rot-web-api.git"
