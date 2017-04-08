@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - '7'
+notifications:
+  email: false
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libstdc++-4.9-dev
